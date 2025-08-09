@@ -1,6 +1,54 @@
-$background: #f2f2f2;
-$label: #97dfce;
-$label-writing: #008464;
-$bouton-first-color: #89c8fa;
-$bouton-second-color: #003a68;
-$bouton-third-color: #9356dc;
+@import "./_variables";
+@import "./_mixins";
+
+body {
+    @include police-base;
+    margin: 0px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.loc-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    background-color: $background-search;
+    gap: 1rem;
+    &__logo {
+        color: $search-color;
+    }
+    &__form {
+        width: 40%;
+    }
+    ::placeholder {
+        color: $search-color;
+        opacity: 1;
+        font-weight: 600;
+    }
+    &__input {
+        border-color: $background-search;
+        background-color: $background-search;
+        border: 0px;
+    }
+}
+//bon exemple d'utilisation du scss//
+.explore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 2rem 2rem 2rem;
+    text-align: center;
+
+    &__title {
+        font-weight: 700px;
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+}
