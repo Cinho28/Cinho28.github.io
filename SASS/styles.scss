@@ -17,17 +17,15 @@ body {
     justify-content: center;
     align-items: center;
     height: 2.5rem;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     background-color: $background-search;
-    gap: 1rem;
     &__logo {
-        color: $search-color;
-    }
-    &__form {
-        width: 40%;
+        color: $fourth-color;
+        position: relative;
+        left: 1.5rem;
     }
     ::placeholder {
-        color: $search-color;
+        color: $fourth-color;
         opacity: 1;
         font-weight: 600;
     }
@@ -35,20 +33,187 @@ body {
         border-color: $background-search;
         background-color: $background-search;
         border: 0px;
+        text-align: center;
     }
 }
-//bon exemple d'utilisation du scss//
+nav {
+    background-color: $background;
+}
 .explore {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 1rem 2rem 2rem 2rem;
     text-align: center;
+    padding-bottom: 3.5rem;
 
     &__title {
-        font-weight: 700px;
+        font-weight: 700;
         font-size: 24px;
-        margin-bottom: 0px;
+        margin: 2.5rem 3rem 0rem;
+    }
+    &__description {
+        font-size: 18px;
+        font-weight: 300;
+        color: $fourth-color;
+        padding-bottom: 1rem;
+    }
+    //NE PAS OUBLIEZ L'ANCRE DU LIEN HREF//
+    &__button {
+        background: linear-gradient(-10deg, $primary-color, $secondary-color);
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        color: white;
+        padding: 1.1rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        transition:
+            background-color 4s ease-in-out,
+            filter 0.5s ease-in-out;
+    }
+    &__button:hover {
+        filter: brightness(1.2);
+    }
+}
+
+.instruction {
+    margin: 2rem 1rem 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2rem;
+
+    &__label {
+        box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.1);
+        background-color: $background;
+        border-radius: 20px;
+        padding: 0.5rem;
+        position: relative;
+        overflow: visible;
+    }
+    &__label::after {
+        @include numbers-label;
+    }
+    &__label--1::after {
+        content: "1";
+    }
+    &__label--2::after {
+        content: "2";
+    }
+    &__label--3::after {
+        content: "3";
+    }
+
+    &__step-description {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 1.5rem;
+        margin-left: 1.3rem;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+    }
+    &__logo {
+        font-size: 1.2rem;
+        color: $icon-color;
+    }
+    &__logo--purple {
+        color: $primary-color;
+    }
+    &__texte {
+        font-weight: 500;
+    }
+}
+
+.restaurant {
+    gap: 1rem;
+    background-color: $background;
+
+    &__margin {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 1rem 3rem 1rem;
+        gap: 1rem;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    &__texte {
+        margin: 0rem 1rem 0rem 1rem;
+        width: 70%;
+    }
+
+    &__location {
+        font-size: 17px;
+        color: $fourth-color;
+        font-weight: 300px;
+        margin: 0px;
+        padding: 0.2rem 0rem 1rem 0rem;
+    }
+
+    &__name {
+        padding-top: 0.5rem;
+        font-size: 18px;
+        margin: 0px;
+        padding-top: 1rem;
+    }
+    &__card-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__checkbox {
+        display: none;
+    }
+    &__heart-label {
+        margin: 0.5rem 1rem 2rem 0rem;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .restaurant__heart-svg {
+        .heart-fill {
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition:
+            filter 0.3s,
+            fill 0.3s;
+    }
+    .restaurant__checkbox:checked + .restaurant__heart-label .restaurant__heart-svg .heart-fill {
+        opacity: 1;
+    }
+    .restaurant__checkbox:checked + .restaurant__heart-label .restaurant__heart-svg .heart-shape {
+        stroke: none; // cache le contour quand le cœur est rempli
+    }
+
+    &__card {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: white;
+
+        img {
+            width: 100%;
+            height: 150px;
+            object-position: 50% 80%;
+            object-fit: cover;
+            display: block;
+        }
     }
 }
