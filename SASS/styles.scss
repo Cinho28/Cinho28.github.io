@@ -66,12 +66,11 @@ nav {
         padding: 1.1rem 1.5rem;
         border-radius: 50px;
         text-decoration: none;
-        transition:
-            background-color 4s ease-in-out,
-            filter 0.5s ease-in-out;
+        transition: filter 0.4s;
     }
     &__button:hover {
-        filter: brightness(1.2);
+        transition: filter 0.4s;
+        filter: brightness(1.3);
     }
 }
 
@@ -91,7 +90,19 @@ nav {
         overflow: visible;
     }
     &__label::after {
-        @include numbers-label;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-color;
+        color: white;
+        border-radius: 50%;
     }
     &__label--1::after {
         content: "1";
@@ -127,23 +138,22 @@ nav {
 }
 
 .restaurant {
-    gap: 1rem;
     background-color: $background;
 
     &__margin {
+        padding: 3rem 0rem 5rem 0rem;
+        margin: 2rem 1rem 0rem 1rem;
         display: flex;
         flex-direction: column;
-        margin: 2rem 1rem 3rem 1rem;
         gap: 1rem;
     }
+    &__title {
+        margin: 0px;
+    }
+
     a {
         text-decoration: none;
         color: black;
-    }
-
-    &__texte {
-        margin: 0rem 1rem 0rem 1rem;
-        width: 70%;
     }
 
     &__location {
@@ -151,69 +161,118 @@ nav {
         color: $fourth-color;
         font-weight: 300px;
         margin: 0px;
-        padding: 0.2rem 0rem 1rem 0rem;
+        padding: 0.2rem 0rem 0rem 0rem;
     }
 
     &__name {
-        padding-top: 0.5rem;
         font-size: 18px;
         margin: 0px;
-        padding-top: 1rem;
     }
     &__card-container {
-        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        margin: 1rem 0.5rem;
     }
 
     &__checkbox {
         display: none;
     }
     &__heart-label {
-        margin: 0.5rem 1rem 2rem 0rem;
         width: 50px;
         height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
-    }
-
-    .restaurant__heart-svg {
-        .heart-fill {
-            transition: opacity 0.3s;
-            opacity: 0;
+        .heart-shape {
+            transition:
+                stroke 5s,
+                fill 5s opacity 0.5s;
         }
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        transition:
-            filter 0.3s,
-            fill 0.3s;
+        .heart-fill {
+            transition: opacity 0.4s;
+        }
     }
-    .restaurant__checkbox:checked + .restaurant__heart-label .restaurant__heart-svg .heart-fill {
+    input[type="checkbox"]:checked + &__heart-label &__heart .heart-shape {
+        stroke: url(#heart-like);
+        fill: url(#heart-like);
         opacity: 1;
     }
-    .restaurant__checkbox:checked + .restaurant__heart-label .restaurant__heart-svg .heart-shape {
-        stroke: none; // cache le contour quand le cœur est rempli
+    input[type="checkbox"]:checked + &__heart-label &__heart .heart-fill {
+        opacity: 0.15;
     }
 
     &__card {
+        position: relative;
         display: flex;
         width: 100%;
         flex-direction: column;
         border-radius: 15px;
         overflow: hidden;
         background-color: white;
+        &--label::after {
+            position: absolute;
+            content: "Nouveau";
+            background-color: $new-background;
+            padding: 0.3rem 0.7rem;
+            border-radius: 5%;
+            right: 1rem;
+            top: 1rem;
+            font-size: 14px;
+            color: $new-font;
+        }
+    }
+    img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+    }
+    &__picture {
+        object-position: 50% 100%;
+        &--resize {
+            object-position: 50% 60%;
+        }
+    }
+}
 
-        img {
-            width: 100%;
-            height: 150px;
-            object-position: 50% 80%;
-            object-fit: cover;
-            display: block;
+footer {
+    background-color: $fourth-color;
+    color: white;
+
+    .footer {
+        padding: 1rem 0rem 2rem 0rem;
+        margin: 0rem 1rem 0rem 1rem;
+        display: flex;
+        flex-direction: column;
+
+        & p {
+            margin: 0.5rem 0rem 0.5rem 0rem;
+            font-weight: 300;
+        }
+
+        & a {
+            text-decoration: none;
+            color: white;
+            font-weight: 300;
+        }
+        & i {
+            font-size: 12px;
+        }
+
+        &__title {
+            filter: invert(1);
+            width: 110px;
+        }
+
+        &__texte-icon {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            font-size: 16px;
+            margin: 0px;
         }
     }
 }
