@@ -13,7 +13,7 @@
        C24 17, 16 23, 16 23
        C16 23, 8 17, 8 13"
     stroke="#111"
-    stroke-width="1"
+    stroke-width="0.5"
     fill="none"
     stroke-linecap="round"
     stroke-linejoin="round"

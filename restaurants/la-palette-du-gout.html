@@ -10,284 +10,290 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css\styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/Restaurant.css" />
     <script
       src="https://kit.fontawesome.com/8eb67b20f2.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check_small"
+    />
   </head>
+
   <body>
     <header>
-      <!--NAVIGATION-->
       <nav class="nav">
+        <a href="..\index.html" class="nav__back-button">
+          <i class="fa-solid fa-arrow-left nav__arrow"></i>
+        </a>
         <div class="nav__title">
           <img
-            src="assets\logo\ohmyfood@2x.svg"
+            src="../assets/logo/ohmyfood@2x.svg"
             alt="logo ohmyfood"
-            class="nav__title--logo"
+            class="nav__title__logo"
           />
         </div>
-        <div class="nav__loc-search">
-          <i class="fa-solid fa-location-dot loc-search__logo"></i>
-          <form method="get" class="loc-search__form">
-            <input
-              type="text"
-              name="loc-search"
-              placeholder="Paris, Belleville"
-              class="nav__loc-search--input"
-            />
-          </form>
-        </div>
-        <!--Partie EXPLORER + BOUTON-->
-        <section class="nav__explore">
-          <div class="nav__explore--contenaire">
-            <h1 class="nav__explore--title">
-              Réservez le menu qui vous convient
-            </h1>
-            <p class="nav__explore--description">
-              Découvrez des restaurants d'exception, sélectionnés par nos soins.
-            </p>
-          </div>
-          <a href="#anchor" class="nav__explore--button">
-            Explorer nos restaurants
-          </a>
-        </section>
       </nav>
     </header>
     <main>
-      <!--FONCTIONNEMENT-->
-      <section class="instruction">
-        <h2 class="instruction__title">Fonctionnement</h2>
-        <div class="instruction__label instruction__label--1">
-          <div class="instruction__step-description">
-            <i class="fa-solid fa-mobile-screen-button instruction__logo"></i>
-            <p class="instruction__texte">Choisissez un restaurant</p>
-          </div>
-        </div>
-        <div class="instruction__label instruction__label--2">
-          <div class="instruction__step-description">
-            <i class="fa-solid fa-list instruction__logo"></i>
-            <p class="instruction__texte">Composez votre menu</p>
-          </div>
-        </div>
-        <div class="instruction__label instruction__label--3">
-          <div class="instruction__step-description">
-            <i
-              class="fa-solid fa-store instruction__logo instruction__logo--purple"
-            ></i>
-            <p class="instruction__texte">Dégustez au restaurant</p>
-          </div>
+      <section class="card">
+        <img
+          src="..\assets\img restaurants\La palette du gout.jpg"
+          alt="La Palette du Goût"
+          class="restaurant-picture"
+        />
+        <div class="card__header">
+          <h1 class="card__title">La palette du goût</h1>
+          <input type="checkbox" id="like1" class="card__checkbox" />
+          <label for="like1" class="card__heart-label">
+            <svg class="card__heart" viewBox="0 0 32 32">
+              <defs>
+                <linearGradient id="heart-like" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#9356dc" />
+                  <stop offset="100%" stop-color="#ff79da" />
+                </linearGradient>
+              </defs>
+              <path
+                class="heart-shape"
+                d="M8 13
+                C8 9, 12 7, 16 11
+                C20 7, 24 9, 24 13
+                C24 17, 16 23, 16 23
+       C16 23, 8 17, 8 13"
+                stroke="#010101"
+                stroke-width="0.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                class="heart-fill"
+                d="M8 13
+       C8 9, 12 7, 16 11
+       C20 7, 24 9, 24 13
+       C24 17, 16 23, 16 23
+       C16 23, 8 17, 8 13"
+                fill="#010101"
+                opacity="0"
+              />
+            </svg>
+          </label>
         </div>
       </section>
-      <!--LISTE RESTAURANT-->
-      <section class="restaurant" id="anchor">
-        <div class="restaurant__margin">
-          <h2 class="restaurant__title">Restaurants</h2>
-          <!--RESTO 1-->
-          <a
-            href="restaurants\la-palette-du-gout.html"
-            class="restaurant__card restaurant__card--label"
-          >
-            <img
-              src="assets\img restaurants\La palette du gout.jpg"
-              alt="assiette dans un restaurant"
-              class="restaurant__picture"
-            />
-            <div class="restaurant__card-container">
-              <div class="restaurant__texte">
-                <h3 class="restaurant__name">La palette du goût</h3>
-                <p class="restaurant__location">Ménilmontant</p>
-              </div>
-              <input type="checkbox" id="like1" class="restaurant__checkbox" />
-              <label for="like1" class="restaurant__heart-label">
-                <svg class="restaurant__heart" viewBox="0 0 32 32">
-                  <defs>
-                    <linearGradient id="heart-like" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#9356dc" />
-                      <stop offset="100%" stop-color="#ff79da" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    class="heart-shape"
-                    d="M8 13
-       C8 9, 12 7, 16 11
-       C20 7, 24 9, 24 13
-       C24 17, 16 23, 16 23
-       C16 23, 8 17, 8 13"
-                    stroke="#010101"
-                    stroke-width="0.5"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    class="heart-fill"
-                    d="M8 13
-       C8 9, 12 7, 16 11
-       C20 7, 24 9, 24 13
-       C24 17, 16 23, 16 23
-       C16 23, 8 17, 8 13"
-                    fill="#010101"
-                    opacity="0"
-                  />
-                </svg>
+      <section class="menu">
+        <div class="menu__container">
+          <h2 class="menu__container--title">ENTRÉES</h2>
+          <form get="get" action="">
+            <div class="menu__separator">
+              <input type="checkbox" class="menu__checkbox" id="entree-1" />
+              <label for="entree-1" class="menu__label">
+                <div class="menu__texte">
+                  <p class="menu__dish-name">Fricassée d'escargots</p>
+                  <div class="menu__desc-price">
+                    <p class="menu__dish-description">Au piment d'Espelette</p>
+                    <p class="menu__dish-price">25€</p>
+                  </div>
+                </div>
+                <div class="menu__check">
+                  <div class="menu__circle">
+                    <span class="material-symbols-outlined menu__check-symbol">
+                      check_small
+                    </span>
+                  </div>
+                </div>
+              </label>
+
+              <input type="checkbox" class="menu__checkbox" id="entree-2" />
+              <label for="entree-2" class="menu__label">
+                <div class="menu__texte">
+                  <p class="menu__dish-name">Foie gras de canard mi-cuit</p>
+                  <div class="menu__desc-price">
+                    <p class="menu__dish-description">
+                      Et ses copeaux de truffe noire
+                    </p>
+                    <p class="menu__dish-price">35€</p>
+                  </div>
+                </div>
+                <div class="menu__check">
+                  <div class="menu__circle">
+                    <span class="material-symbols-outlined menu__check-symbol">
+                      check_small
+                    </span>
+                  </div>
+                </div>
+              </label>
+
+              <input type="checkbox" class="menu__checkbox" id="entree-3" />
+              <label for="entree-3" class="menu__label">
+                <div class="menu__texte">
+                  <p class="menu__dish-name">Œuf au plat</p>
+                  <div class="menu__desc-price">
+                    <p class="menu__dish-description">
+                      Assaisonné à la truffe sur lit de caviar
+                    </p>
+                    <p class="menu__dish-price">20€</p>
+                  </div>
+                </div>
+                <div class="menu__check">
+                  <div class="menu__circle">
+                    <span class="material-symbols-outlined menu__check-symbol">
+                      check_small
+                    </span>
+                  </div>
+                </div>
               </label>
             </div>
-          </a>
-          <!--RESTO 2-->
-          <a
-            href="restaurants\la-note-enchantee.html"
-            class="restaurant__card restaurant__card--label"
-          >
-            <img
-              src="assets\img restaurants\La note enchantée.jpg"
-              alt="assiette dans un restaurant"
-              class="restaurant__picture restaurant__picture--resize"
-            />
-            <div class="restaurant__card-container">
-              <div class="restaurant__texte">
-                <h3 class="restaurant__name">La note enchantée</h3>
-                <p class="restaurant__location">Charonne</p>
+
+            <div class="menu__container">
+              <h2 class="menu__container--title">PLATS</h2>
+              <div class="menu__separator">
+                <input type="checkbox" class="menu__checkbox" id="plat-1" />
+                <label for="plat-1" class="menu__label">
+                  <div class="menu__texte">
+                    <p class="menu__dish-name">Filet de bœuf aux herbes</p>
+                    <div class="menu__desc-price">
+                      <p class="menu__dish-description">
+                        Accompagné de sa ribambelle de légumes
+                      </p>
+                      <p class="menu__dish-price">40€</p>
+                    </div>
+                  </div>
+                  <div class="menu__check">
+                    <div class="menu__circle">
+                      <span
+                        class="material-symbols-outlined menu__check-symbol"
+                      >
+                        check_small
+                      </span>
+                    </div>
+                  </div>
+                </label>
+
+                <input type="checkbox" class="menu__checkbox" id="plat-2" />
+                <label for="plat-2" class="menu__label">
+                  <div class="menu__texte">
+                    <p class="menu__dish-name">Parmentier de queue de bœuf</p>
+                    <div class="menu__desc-price">
+                      <p class="menu__dish-description">
+                        À la truffe noire sur sa purée de panais
+                      </p>
+                      <p class="menu__dish-price">35€</p>
+                    </div>
+                  </div>
+                  <div class="menu__check">
+                    <div class="menu__circle">
+                      <span
+                        class="material-symbols-outlined menu__check-symbol"
+                      >
+                        check_small
+                      </span>
+                    </div>
+                  </div>
+                </label>
+
+                <input type="checkbox" class="menu__checkbox" id="plat-3" />
+                <label for="plat-3" class="menu__label">
+                  <div class="menu__texte">
+                    <p class="menu__dish-name">Filet de turbot</p>
+                    <div class="menu__desc-price">
+                      <p class="menu__dish-description">Aux agrumes</p>
+                      <p class="menu__dish-price">44€</p>
+                    </div>
+                  </div>
+                  <div class="menu__check">
+                    <div class="menu__circle">
+                      <span
+                        class="material-symbols-outlined menu__check-symbol"
+                      >
+                        check_small
+                      </span>
+                    </div>
+                  </div>
+                </label>
               </div>
-              <input type="checkbox" id="like2" class="restaurant__checkbox" />
-              <label for="like2" class="restaurant__heart-label">
-                <svg class="restaurant__heart" viewBox="0 0 32 32">
-                  <defs>
-                    <linearGradient id="heart-like" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#9356dc" />
-                      <stop offset="100%" stop-color="#ff79da" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    class="heart-shape"
-                    d="M8 13
-       C8 9, 12 7, 16 11
-       C20 7, 24 9, 24 13
-       C24 17, 16 23, 16 23
-       C16 23, 8 17, 8 13"
-                    stroke="#010101"
-                    stroke-width="0.5"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    class="heart-fill"
-                    d="M8 13
-       C8 9, 12 7, 16 11
-       C20 7, 24 9, 24 13
-       C24 17, 16 23, 16 23
-       C16 23, 8 17, 8 13"
-                    fill="#010101"
-                    opacity="0"
-                  />
-                </svg>
-              </label>
             </div>
-          </a>
-          <!--RESTO 3-->
-          <a href="restaurants\a-la-française.html" class="restaurant__card">
-            <img
-              src="assets\img restaurants\À la française.jpg"
-              alt="assiette dans un restaurant"
-              class="restaurant__picture"
-            />
-            <div class="restaurant__card-container">
-              <div class="restaurant__texte">
-                <h3 class="restaurant__name">À la française</h3>
-                <p class="restaurant__location">Cité Rouge</p>
+            <div class="menu__container">
+              <h2 class="menu__container--title">Desserts</h2>
+              <div class="menu__separator">
+                <input type="checkbox" class="menu__checkbox" id="dessert-1" />
+                <label for="dessert-1" class="menu__label">
+                  <div class="menu__texte">
+                    <p class="menu__dish-name">Paris-Brest</p>
+                    <div class="menu__desc-price">
+                      <p class="menu__dish-description">Revisité</p>
+                      <p class="menu__dish-price">18€</p>
+                    </div>
+                  </div>
+                  <div class="menu__check">
+                    <div class="menu__circle">
+                      <span
+                        class="material-symbols-outlined menu__check-symbol"
+                      >
+                        check_small
+                      </span>
+                    </div>
+                  </div>
+                </label>
+                <input type="checkbox" class="menu__checkbox" id="dessert-2" />
+                <label for="dessert-2" class="menu__label">
+                  <div class="menu__texte">
+                    <p class="menu__dish-name">
+                      Macaron au chocolat d'exception
+                    </p>
+                    <div class="menu__desc-price">
+                      <p class="menu__dish-description">
+                        Et glace à la vanille de Madagascar
+                      </p>
+                      <p class="menu__dish-price">22€</p>
+                    </div>
+                  </div>
+                  <div class="menu__check">
+                    <div class="menu__circle">
+                      <span
+                        class="material-symbols-outlined menu__check-symbol"
+                      >
+                        check_small
+                      </span>
+                    </div>
+                  </div>
+                </label>
+                <input type="checkbox" class="menu__checkbox" id="dessert-3" />
+                <label for="dessert-3" class="menu__label">
+                  <div class="menu__texte">
+                    <p class="menu__dish-name">Mousse au chocolat</p>
+                    <div class="menu__desc-price">
+                      <p class="menu__dish-description">
+                        Au piment d'Espelette et à la truffe noire
+                      </p>
+                      <p class="menu__dish-price">23€</p>
+                    </div>
+                  </div>
+                  <div class="menu__check">
+                    <div class="menu__circle">
+                      <span
+                        class="material-symbols-outlined menu__check-symbol"
+                      >
+                        check_small
+                      </span>
+                    </div>
+                  </div>
+                </label>
               </div>
-              <input type="checkbox" id="like3" class="restaurant__checkbox" />
-              <label for="like3" class="restaurant__heart-label">
-                <svg class="restaurant__heart" viewBox="0 0 32 32">
-                  <defs>
-                    <linearGradient id="heart-like" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#9356dc" />
-                      <stop offset="100%" stop-color="#ff79da" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    class="heart-shape"
-                    d="M8 13
-       C8 9, 12 7, 16 11
-       C20 7, 24 9, 24 13
-       C24 17, 16 23, 16 23
-       C16 23, 8 17, 8 13"
-                    stroke="#010101"
-                    stroke-width="0.5"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    class="heart-fill"
-                    d="M8 13
-       C8 9, 12 7, 16 11
-       C20 7, 24 9, 24 13
-       C24 17, 16 23, 16 23
-       C16 23, 8 17, 8 13"
-                    fill="#010101"
-                    opacity="0"
-                  />
-                </svg>
-              </label>
             </div>
-          </a>
-          <!--RESTO 4-->
-          <a
-            href="restaurants\le-delice-des-sens.html"
-            class="restaurant__card"
-          >
-            <img
-              src="assets\img restaurants\Le délice des sens.jpg"
-              alt="assiette dans un restaurant"
-              class="restaurant__picture"
-            />
-            <div class="restaurant__card-container">
-              <div class="restaurant__texte">
-                <h3 class="restaurant__name">Le délice des sens</h3>
-                <p class="restaurant__location">Folie-Méricourt</p>
-              </div>
-              <input type="checkbox" id="like4" class="restaurant__checkbox" />
-              <label for="like4" class="restaurant__heart-label">
-                <svg class="restaurant__heart" viewBox="0 0 32 32">
-                  <defs>
-                    <linearGradient id="heart-like" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#9356dc" />
-                      <stop offset="100%" stop-color="#ff79da" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    class="heart-shape"
-                    d="M8 13
-       C8 9, 12 7, 16 11
-       C20 7, 24 9, 24 13
-       C24 17, 16 23, 16 23
-       C16 23, 8 17, 8 13"
-                    stroke="#010101"
-                    stroke-width="0.5"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    class="heart-fill"
-                    d="M8 13
-       C8 9, 12 7, 16 11
-       C20 7, 24 9, 24 13
-       C24 17, 16 23, 16 23
-       C16 23, 8 17, 8 13"
-                    fill="#010101"
-                    opacity="0"
-                  />
-                </svg>
-              </label>
+            <div class="menu__submit">
+              <button type="submit" class="menu__button-submit">
+                Commander
+              </button>
             </div>
-          </a>
+          </form>
         </div>
       </section>
     </main>
-    <!--FOOTER-->
     <footer>
       <div class="footer">
         <svg
@@ -333,11 +339,11 @@
         </svg>
         <div class="footer__texte-icon">
           <i class="fa-solid fa-utensils"></i>
-          <p>Proposer un restaurant</p>
+          <p class="footer_text">Proposer un restaurant</p>
         </div>
         <div class="footer__texte-icon">
           <i class="fa-solid fa-handshake"></i>
-          <p>Devenir partenaire</p>
+          <p class="footer_text">Devenir partenaire</p>
         </div>
         <p>Mentions légales</p>
         <a href="ohmyfood@gmail.com">Contact</a>

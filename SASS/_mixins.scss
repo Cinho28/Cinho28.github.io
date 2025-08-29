@@ -2,3 +2,62 @@
     font-family: "Roboto", sans-serif;
     font-weight: 400;
 }
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Heart icon transition//
+@mixin heart-dimensions {
+    width: 40px;
+    height: 50px;
+}
+@mixin heart-shape-transition {
+    transition:
+        stroke 1s,
+        fill 1s opacity 0.4s;
+}
+@mixin heart-fill-transition {
+    transition: opacity 0.4s;
+}
+@mixin checked-heart-shape {
+    stroke: url(#heart-like);
+    fill: url(#heart-like);
+    opacity: 1;
+}
+@mixin checked-heart-fill {
+    opacity: 0.2;
+}
+// Label//
+@mixin label-border {
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 0.5rem;
+}
+
+//animation//
+@mixin hide-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    z-index: 1;
+    margin: 0px;
+    max-width: 100%;
+}
+
+@mixin button-style {
+    background: linear-gradient(-10deg, $primary-color, $secondary-color);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 1.1rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: filter 0.4s;
+}
+@mixin button-hover {
+    transition: filter 0.4s;
+    filter: brightness(1.3);
+}

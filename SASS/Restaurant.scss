@@ -1,0 +1,274 @@
+@import "./_variables";
+@import "./_mixins";
+
+body {
+    @include police-base;
+    margin: 0px;
+    animation: fadeIn 0.4s ease;
+}
+
+header {
+    .nav {
+        background-color: $background;
+        @include flex-center;
+        gap: 2rem;
+
+        &__back-button {
+            text-decoration: none;
+            position: relative;
+            @include flex-center;
+        }
+        &__arrow {
+            font-size: 20px;
+            color: $fourth-color;
+            position: absolute;
+            right: 2rem;
+        }
+
+        &__title {
+            @include flex-center;
+
+            &__logo {
+                width: 170px;
+                height: 60px;
+            }
+        }
+    }
+}
+.restaurant-picture {
+    width: 100%;
+    height: 300px;
+}
+.card {
+    position: relative;
+    background-color: $background;
+    &__title {
+        font-size: 28px;
+        font-weight: 400;
+        font-family: "Shrikhand", serif;
+    }
+    &__header {
+        position: absolute;
+        z-index: 2;
+        bottom: -1.8rem;
+        border-radius: 40px 40px 0px 0px;
+        background-color: $background;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__checkbox {
+        display: none;
+    }
+    &__heart-label {
+        @include heart-dimensions;
+        @include flex-center;
+        .heart-shape {
+            @include heart-shape-transition;
+        }
+        .heart-fill {
+            @include heart-fill-transition;
+        }
+    }
+    input[type="checkbox"]:checked + .card__heart-label .card__heart .heart-shape {
+        @include checked-heart-shape;
+    }
+    input[type="checkbox"]:checked + .card__heart-label .card__heart .heart-fill {
+        @include checked-heart-fill;
+    }
+}
+.menu {
+    font-family: "Roboto", serif;
+    padding-top: 2rem;
+    background-color: $background;
+    &__separator {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    &__container {
+        &--title {
+            font-size: 16px;
+            font-weight: 300;
+            margin-left: 1rem;
+        }
+        &--title:after {
+            content: "";
+            display: block;
+            width: 2.5rem;
+            height: 3px;
+            background-color: $tertiary-color;
+            margin-top: 0.4rem;
+        }
+    }
+    &__label {
+        position: relative;
+        @include label-border;
+        display: flex;
+        justify-content: space-between;
+        margin: 0rem 0.8rem;
+        background-color: white;
+        padding: 0px;
+        overflow: hidden;
+    }
+
+    &__texte {
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1rem;
+        gap: 0.4rem;
+        margin: 0.8rem 1rem;
+        overflow: hidden;
+    }
+    &__texte::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, white 30%);
+        z-index: 1;
+        opacity: 0;
+    }
+    .menu__checkbox:checked + .menu__label .menu__texte::after {
+        animation: fadeInOut 0.4s linear forwards;
+    }
+
+    &__dish-name {
+        position: relative;
+        font-size: 18px;
+        font-weight: 500;
+
+        @include hide-text;
+    }
+    &__dish-description {
+        position: relative;
+        font-size: 15px;
+        color: $fourth-color;
+        font-weight: 300;
+
+        @include hide-text;
+    }
+
+    &__desc-price {
+        display: flex;
+        margin: 0px;
+        justify-content: space-between;
+    }
+
+    &__dish-price {
+        position: relative;
+        display: flex;
+
+        font-weight: 700;
+        font-size: 15px;
+        margin: 0px;
+        z-index: 2;
+        max-width: 100%;
+    }
+    &__checkbox {
+        display: none;
+    }
+    &__check {
+        font-size: 24px;
+        color: white;
+        background-color: $tertiary-color;
+        width: 0%;
+        margin: 0px;
+        border-radius: 0px 20px 20px 0px;
+        display: flex;
+        @include flex-center;
+        transition: width 0.3s;
+    }
+    &__circle {
+        position: relative;
+
+        font-size: 50px;
+        @include flex-center;
+        background-color: white;
+        height: 1.3rem;
+        width: 1.3rem;
+        border-radius: 50%;
+    }
+    &__check-symbol {
+        position: absolute;
+        color: white;
+        transition: color 0.3s;
+    }
+    .menu__checkbox:checked + .menu__label .menu__check {
+        width: 6rem;
+    }
+    .menu__checkbox:checked + .menu__label .menu__check-symbol {
+        color: $tertiary-color;
+    }
+    .menu__checkbox:checked + .menu__label .menu__texte .menu__dish-name {
+        max-width: 90%;
+    }
+    .menu__checkbox:checked + .menu__label .menu__texte .menu__dish-description {
+        max-width: 85%;
+    }
+    &__submit {
+        @include flex-center;
+        padding: 2rem 0rem;
+    }
+    &__button-submit {
+        font-size: 16px;
+        font-weight: 500;
+
+        width: 12rem;
+        border: none;
+        @include button-style;
+    }
+    &__button-submit:hover {
+        @include button-hover;
+    }
+}
+footer {
+    background-color: $fourth-color;
+    color: white;
+
+    .footer {
+        padding: 1rem 0rem 1rem 1.5rem;
+        margin: 0rem 0.5rem 0rem rem;
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+
+        &__title {
+            filter: invert(1);
+            width: 110px;
+            padding-bottom: 1rem;
+        }
+        & p {
+            margin: 0.3rem 0rem;
+        }
+
+        & a {
+            text-decoration: none;
+            color: white;
+            font-weight: 400;
+            margin: 0.3rem 0rem;
+        }
+        & i {
+            font-size: 12px;
+        }
+
+        &__texte-icon {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            font-size: 16px;
+            margin: 0px;
+        }
+    }
+}
