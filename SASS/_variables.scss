@@ -27,7 +27,7 @@ $new-font: #008766;
 }
 @keyframes fadeInOut {
     0% {
-        opacity: 0;
+        opacity: 1;
     }
     20% {
         opacity: 1;
@@ -43,5 +43,33 @@ $new-font: #008766;
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0); /* Position initiale */
+    }
+    50% {
+        transform: translateY(-10px); /* Le rond saute vers le haut */
     }
 }

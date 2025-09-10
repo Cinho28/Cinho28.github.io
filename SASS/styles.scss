@@ -1,10 +1,83 @@
 @import "./_variables";
 @import "./_mixins";
-
+* {
+    box-sizing: border-box;
+}
 body {
     @include police-base;
     margin: 0px;
-    animation: fadeIn 0.4s ease;
+    animation: fadeIn 0.6s ease;
+}
+.loader {
+    gap: 3rem;
+    @include flex-center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    animation: fadeIn 0.4s linear;
+    animation: fadeOut 0.4s linear forwards 2s;
+    &__logo {
+        width: 250px;
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+    &__flex {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+    &__load {
+        background-color: black;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        animation: bounce 1.5s infinite ease-in-out;
+        &--1 {
+            animation-delay: 0s;
+        }
+        &--2 {
+            animation-delay: 0.3s;
+        }
+        &--3 {
+            background-color: white;
+            animation-delay: 0.6s;
+        }
+        &--4 {
+            background-color: white;
+            animation-delay: 0.9s;
+        }
+        &--5 {
+            background-color: white;
+            animation-delay: 1.2s;
+        }
+
+        &--6 {
+            background-color: white;
+            animation-delay: 1.5s;
+        }
+        &--7 {
+            background-color: white;
+            animation-delay: 1.2s;
+        }
+        &--8 {
+            background-color: white;
+            animation-delay: 0.9s;
+        }
+        &--9 {
+            background-color: white;
+            animation-delay: 0.6s;
+        }
+        &--10 {
+            animation-delay: 0.3s;
+        }
+        &--11 {
+            animation-delay: 0s;
+        }
+    }
 }
 .nav {
     background-color: $background;
@@ -67,11 +140,19 @@ body {
     }
 }
 .instruction {
-    margin: 2rem 1rem 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-bottom: 2rem;
+    &__title {
+        margin-left: 1rem;
+        font-size: 24px;
+        font-weight: 700;
+        padding-top: 2rem;
+    }
+    &__flexbox {
+        margin: 2rem 1rem 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 3rem;
+    }
 
     &__label {
         @include label-border;
@@ -128,17 +209,23 @@ body {
 }
 
 .restaurant {
+    padding: 2rem 0rem 5rem 0rem;
     background-color: $background;
 
     &__margin {
-        padding: 3rem 0rem 5rem 0rem;
         margin: 2rem 1rem 0rem 1rem;
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
+    &__flexbox {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     &__title {
-        margin: 0px;
+        margin: 0rem 0rem 0rem 0rem;
     }
 
     a {
@@ -171,6 +258,7 @@ body {
         display: none;
     }
     &__heart-label {
+        cursor: pointer;
         @include heart-dimensions;
         @include flex-center;
         .heart-shape {
@@ -207,6 +295,7 @@ body {
             color: $new-font;
         }
     }
+
     img {
         width: 100%;
         height: 180px;
@@ -221,49 +310,242 @@ body {
     }
 }
 
-footer {
+.footer {
     background-color: $fourth-color;
     color: white;
+    padding: 1rem 0rem 2rem 1.5rem;
 
-    .footer {
-        padding: 1rem 0rem 1rem 1.5rem;
-        margin: 0rem 0.5rem 0rem rem;
+    display: flex;
+    flex-direction: column;
+
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+
+    &__title {
+        filter: invert(1);
+        width: 110px;
+    }
+
+    &__flexbox {
         display: flex;
         flex-direction: column;
-        font-weight: 400;
-        font-size: 16px;
-        font-family: "Roboto", sans-serif;
+    }
+
+    &__title {
+        filter: invert(1);
+    }
+    &__texte {
+        display: flex;
+        flex-direction: column;
+    }
+    &__texte-icon {
+        display: flex;
+        gap: 1rem;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    & a {
+        text-decoration: none;
+        color: white;
+    }
+    & p {
+        margin: 0.5rem 0rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .instruction {
+        flex-direction: column;
+        display: flex;
+        &__margin {
+            margin: 2rem 3rem 1rem 2rem;
+        }
+
+        &__flexbox {
+            flex-direction: row;
+            gap: 2rem;
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        &__step-description {
+            width: 100%;
+        }
+        &__label {
+            width: 100%;
+        }
+        &__title {
+            display: flex;
+            text-align: left;
+            width: fit-content;
+            margin: 2rem 0rem 2rem 0rem;
+            padding: 0rem 0rem 0rem 0rem;
+        }
+        &__texte {
+            max-width: 85%;
+        }
+    }
+
+    .restaurant {
+        padding: 2rem 0rem 2rem 0rem;
+        &__margin {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 0rem 1rem 0rem 1rem;
+        }
+        &__flexbox {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        &__card {
+            width: 45%;
+        }
+        &__title {
+            margin-left: 1rem;
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 4rem;
+
+        padding: 4rem 3rem 2rem 2rem;
+
+        &__flexbox {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+        }
 
         &__title {
+            margin: 0rem 2rem 0rem 2rem;
             filter: invert(1);
-            width: 110px;
-            padding-bottom: 1rem;
+            width: 130px;
         }
-        & p {
-            margin: 0.3rem 0rem;
-        }
-
-        & a {
-            text-decoration: none;
-            color: white;
-            font-weight: 400;
-            margin: 0.3rem 0rem;
-        }
-        & i {
-            font-size: 12px;
-        }
-
-        &__texte-icon {
+        &__texte {
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: 1rem;
-            font-size: 16px;
-            margin: 0px;
+        }
+        &__texte-icon {
+            gap: 1rem;
         }
     }
 }
-@media screen and (min-width: 768px) {
-}
 @media screen and (min-width: 1024px) {
+    .instruction {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        &__margin {
+            margin: 2rem 3rem 1rem 3rem;
+            max-width: 1024px;
+            width: 100%;
+            overflow: hidden;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        &__flexbox {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__label {
+            width: 100%;
+        }
+        &__title {
+            text-align: left;
+            width: fit-content;
+            margin: 2rem 0rem 2rem 1rem;
+        }
+        &__texte {
+            max-width: 100%;
+        }
+    }
+    .restaurant {
+        padding: 2rem 0rem 2rem 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &__margin {
+            display: flex;
+            max-width: 1024px;
+            width: 100%;
+            justify-content: center;
+            margin: 0px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        &__flexbox {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        &__card {
+            width: 45%;
+        }
+        &__title {
+            text-align: left;
+            width: 100%;
+            margin-left: 1.5rem;
+        }
+        &__picture {
+            object-position: 50% 80%;
+
+            &--resize {
+                object-position: 50% 60%;
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding: 4rem 3rem 2rem 2rem;
+
+        &__flexbox {
+            display: flex;
+            flex-direction: row;
+            gap: 0rem;
+        }
+
+        &__title {
+            margin: 0rem 2rem 0rem 2rem;
+            filter: invert(1);
+            width: 100px;
+        }
+        &__texte {
+            display: flex;
+            justify-content: row;
+            padding-left: 3rem;
+        }
+        &__texte-icon {
+            padding-left: 1rem;
+        }
+    }
 }

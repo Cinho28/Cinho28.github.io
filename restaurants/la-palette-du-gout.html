@@ -26,18 +26,38 @@
   </head>
 
   <body>
+        <div class="loader">
+      <img
+        src="../assets/logo/ohmyfood.png"
+        alt="Loading..."
+        class="loader__logo"
+      />
+      <div class="loader__flex">
+        <div class="loader__load loader__load--1"></div>
+        <div class="loader__load loader__load--2"></div>
+        <div class="loader__load loader__load--3">L</div>
+        <div class="loader__load loader__load--4">O</div>
+        <div class="loader__load loader__load--5">A</div>
+        <div class="loader__load loader__load--6">D</div>
+        <div class="loader__load loader__load--7">I</div>
+        <div class="loader__load loader__load--8">N</div>
+        <div class="loader__load loader__load--9">G</div>
+        <div class="loader__load loader__load--10"></div>
+        <div class="loader__load loader__load--11"></div>
+      </div>
+    </div>
     <header>
       <nav class="nav">
         <a href="..\index.html" class="nav__back-button">
           <i class="fa-solid fa-arrow-left nav__arrow"></i>
         </a>
-        <div class="nav__title">
+       
           <img
             src="../assets/logo/ohmyfood@2x.svg"
             alt="logo ohmyfood"
-            class="nav__title__logo"
+            class="nav__title"
           />
-        </div>
+      
       </nav>
     </header>
     <main>
@@ -45,7 +65,7 @@
         <img
           src="..\assets\img restaurants\La palette du gout.jpg"
           alt="La Palette du Goût"
-          class="restaurant-picture"
+          class="restaurant-picture restaurant-picture__la-palette-du-gout"
         />
         <div class="card__header">
           <h1 class="card__title">La palette du goût</h1>
@@ -86,10 +106,10 @@
         </div>
       </section>
       <section class="menu">
+        <form get="post" action="">
         <div class="menu__container">
-          <h2 class="menu__container--title">ENTRÉES</h2>
-          <form get="get" action="">
             <div class="menu__separator">
+              <h2 class="menu__separator--title">ENTRÉES</h2>
               <input type="checkbox" class="menu__checkbox" id="entree-1" />
               <label for="entree-1" class="menu__label">
                 <div class="menu__texte">
@@ -113,9 +133,7 @@
                 <div class="menu__texte">
                   <p class="menu__dish-name">Foie gras de canard mi-cuit</p>
                   <div class="menu__desc-price">
-                    <p class="menu__dish-description">
-                      Et ses copeaux de truffe noire
-                    </p>
+                    <p class="menu__dish-description">Et ses copeaux de truffe noire</p>
                     <p class="menu__dish-price">35€</p>
                   </div>
                 </div>
@@ -149,142 +167,120 @@
               </label>
             </div>
 
-            <div class="menu__container">
-              <h2 class="menu__container--title">PLATS</h2>
-              <div class="menu__separator">
-                <input type="checkbox" class="menu__checkbox" id="plat-1" />
-                <label for="plat-1" class="menu__label">
-                  <div class="menu__texte">
-                    <p class="menu__dish-name">Filet de bœuf aux herbes</p>
-                    <div class="menu__desc-price">
-                      <p class="menu__dish-description">
-                        Accompagné de sa ribambelle de légumes
-                      </p>
-                      <p class="menu__dish-price">40€</p>
-                    </div>
+            <div class="menu__separator">
+              <h2 class="menu__separator--title">PLATS</h2>
+              <input type="checkbox" class="menu__checkbox" id="plat-1" />
+              <label for="plat-1" class="menu__label">
+                <div class="menu__texte">
+                  <p class="menu__dish-name">Filet de bœuf aux herbes</p>
+                  <div class="menu__desc-price">
+                    <p class="menu__dish-description">Accompagné de sa ribambelle de légumes</p>
+                    <p class="menu__dish-price">40€</p>
                   </div>
-                  <div class="menu__check">
-                    <div class="menu__circle">
-                      <span
-                        class="material-symbols-outlined menu__check-symbol"
-                      >
-                        check_small
-                      </span>
-                    </div>
+                </div>
+                <div class="menu__check">
+                  <div class="menu__circle">
+                    <span class="material-symbols-outlined menu__check-symbol">
+                      check_small
+                    </span>
                   </div>
-                </label>
+                </div>
+              </label>
 
-                <input type="checkbox" class="menu__checkbox" id="plat-2" />
-                <label for="plat-2" class="menu__label">
-                  <div class="menu__texte">
-                    <p class="menu__dish-name">Parmentier de queue de bœuf</p>
-                    <div class="menu__desc-price">
-                      <p class="menu__dish-description">
-                        À la truffe noire sur sa purée de panais
-                      </p>
-                      <p class="menu__dish-price">35€</p>
-                    </div>
-                  </div>
-                  <div class="menu__check">
-                    <div class="menu__circle">
-                      <span
-                        class="material-symbols-outlined menu__check-symbol"
-                      >
-                        check_small
-                      </span>
-                    </div>
-                  </div>
-                </label>
-
-                <input type="checkbox" class="menu__checkbox" id="plat-3" />
-                <label for="plat-3" class="menu__label">
-                  <div class="menu__texte">
-                    <p class="menu__dish-name">Filet de turbot</p>
-                    <div class="menu__desc-price">
-                      <p class="menu__dish-description">Aux agrumes</p>
-                      <p class="menu__dish-price">44€</p>
-                    </div>
-                  </div>
-                  <div class="menu__check">
-                    <div class="menu__circle">
-                      <span
-                        class="material-symbols-outlined menu__check-symbol"
-                      >
-                        check_small
-                      </span>
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-            <div class="menu__container">
-              <h2 class="menu__container--title">Desserts</h2>
-              <div class="menu__separator">
-                <input type="checkbox" class="menu__checkbox" id="dessert-1" />
-                <label for="dessert-1" class="menu__label">
-                  <div class="menu__texte">
-                    <p class="menu__dish-name">Paris-Brest</p>
-                    <div class="menu__desc-price">
-                      <p class="menu__dish-description">Revisité</p>
-                      <p class="menu__dish-price">18€</p>
-                    </div>
-                  </div>
-                  <div class="menu__check">
-                    <div class="menu__circle">
-                      <span
-                        class="material-symbols-outlined menu__check-symbol"
-                      >
-                        check_small
-                      </span>
-                    </div>
-                  </div>
-                </label>
-                <input type="checkbox" class="menu__checkbox" id="dessert-2" />
-                <label for="dessert-2" class="menu__label">
-                  <div class="menu__texte">
-                    <p class="menu__dish-name">
-                      Macaron au chocolat d'exception
+              <input type="checkbox" class="menu__checkbox" id="plat-2" />
+              <label for="plat-2" class="menu__label">
+                <div class="menu__texte">
+                  <p class="menu__dish-name">Parmentier de queue de bœuf</p>
+                  <div class="menu__desc-price">
+                    <p class="menu__dish-description">
+                      À la truffe noire sur sa purée de panais
                     </p>
-                    <div class="menu__desc-price">
-                      <p class="menu__dish-description">
-                        Et glace à la vanille de Madagascar
-                      </p>
-                      <p class="menu__dish-price">22€</p>
-                    </div>
+                    <p class="menu__dish-price">35€</p>
                   </div>
-                  <div class="menu__check">
-                    <div class="menu__circle">
-                      <span
-                        class="material-symbols-outlined menu__check-symbol"
-                      >
-                        check_small
-                      </span>
-                    </div>
+                </div>
+                <div class="menu__check">
+                  <div class="menu__circle">
+                    <span class="material-symbols-outlined menu__check-symbol">
+                      check_small
+                    </span>
                   </div>
-                </label>
-                <input type="checkbox" class="menu__checkbox" id="dessert-3" />
-                <label for="dessert-3" class="menu__label">
-                  <div class="menu__texte">
-                    <p class="menu__dish-name">Mousse au chocolat</p>
-                    <div class="menu__desc-price">
-                      <p class="menu__dish-description">
-                        Au piment d'Espelette et à la truffe noire
-                      </p>
-                      <p class="menu__dish-price">23€</p>
-                    </div>
+                </div>
+              </label>
+
+              <input type="checkbox" class="menu__checkbox" id="plat-3" />
+              <label for="plat-3" class="menu__label">
+                <div class="menu__texte">
+                  <p class="menu__dish-name">Filet de turbot</p>
+                  <div class="menu__desc-price">
+                    <p class="menu__dish-description">Aux agrumes</p>
+                    <p class="menu__dish-price">44€</p>
                   </div>
-                  <div class="menu__check">
-                    <div class="menu__circle">
-                      <span
-                        class="material-symbols-outlined menu__check-symbol"
-                      >
-                        check_small
-                      </span>
-                    </div>
+                </div>
+                <div class="menu__check">
+                  <div class="menu__circle">
+                    <span class="material-symbols-outlined menu__check-symbol">
+                      check_small
+                    </span>
                   </div>
-                </label>
-              </div>
+                </div>
+              </label>
             </div>
+
+            <div class="menu__separator">
+              <h2 class="menu__separator--title">Desserts</h2>
+              <input type="checkbox" class="menu__checkbox" id="dessert-1" />
+              <label for="dessert-1" class="menu__label">
+                <div class="menu__texte">
+                  <p class="menu__dish-name">Paris-Brest</p>
+                  <div class="menu__desc-price">
+                    <p class="menu__dish-description">Revisité</p>
+                    <p class="menu__dish-price">18€</p>
+                  </div>
+                </div>
+                <div class="menu__check">
+                  <div class="menu__circle">
+                    <span class="material-symbols-outlined menu__check-symbol">
+                      check_small
+                    </span>
+                  </div>
+                </div>
+              </label>
+              <input type="checkbox" class="menu__checkbox" id="dessert-2" />
+              <label for="dessert-2" class="menu__label">
+                <div class="menu__texte">
+                  <p class="menu__dish-name">Macaron au chocolat d'exception</p>
+                  <div class="menu__desc-price">
+                    <p class="menu__dish-description">Et glace à la vanille de Madagascar</p>
+                    <p class="menu__dish-price">22€</p>
+                  </div>
+                </div>
+                <div class="menu__check">
+                  <div class="menu__circle">
+                    <span class="material-symbols-outlined menu__check-symbol">
+                      check_small
+                    </span>
+                  </div>
+                </div>
+              </label>
+              <input type="checkbox" class="menu__checkbox" id="dessert-3" />
+              <label for="dessert-3" class="menu__label">
+                <div class="menu__texte">
+                  <p class="menu__dish-name">Mousse au chocolat</p>
+                  <div class="menu__desc-price">
+                    <p class="menu__dish-description">Au piment d'Espelette et à la truffe noire</p>
+                    <p class="menu__dish-price">23€</p>
+                  </div>
+                </div>
+                <div class="menu__check">
+                  <div class="menu__circle">
+                    <span class="material-symbols-outlined menu__check-symbol">
+                      check_small
+                    </span>
+                  </div>
+                </div>
+              </label>
+            </div>
+
             <div class="menu__submit">
               <button type="submit" class="menu__button-submit">
                 Commander
@@ -337,16 +333,21 @@
             fill="#101010"
           />
         </svg>
-        <div class="footer__texte-icon">
-          <i class="fa-solid fa-utensils"></i>
-          <p class="footer_text">Proposer un restaurant</p>
+
+        <div class="footer__flexbox">
+          <div class="footer__texte-icon">
+            <i class="fa-solid fa-utensils"></i>
+            <p>Proposer un restaurant</p>
+          </div>
+          <div class="footer__texte-icon">
+            <i class="fa-solid fa-handshake"></i>
+            <p>Devenir partenaire</p>
+          </div>
+          <div class="footer__texte">
+            <p>Mentions légales</p>
+            <a href="ohmyfood@gmail.com">Contact</a>
+          </div>
         </div>
-        <div class="footer__texte-icon">
-          <i class="fa-solid fa-handshake"></i>
-          <p class="footer_text">Devenir partenaire</p>
-        </div>
-        <p>Mentions légales</p>
-        <a href="ohmyfood@gmail.com">Contact</a>
       </div>
     </footer>
   </body>
