@@ -236,7 +236,7 @@ body {
     &__location {
         font-size: 17px;
         color: $fourth-color;
-        font-weight: 300px;
+        font-weight: 300;
         margin: 0px;
         padding: 0.2rem 0rem 0rem 0rem;
     }
@@ -260,7 +260,11 @@ body {
     &__heart-label {
         cursor: pointer;
         @include heart-dimensions;
-        @include flex-center;
+        display: flex;
+        right: 0.5rem;
+        position: absolute;
+        top: 12.2rem;
+        align-self: flex-end;
         .heart-shape {
             @include heart-shape-transition;
         }
@@ -541,7 +545,7 @@ body {
         }
         &__texte {
             display: flex;
-            justify-content: row;
+
             padding-left: 3rem;
         }
         &__texte-icon {

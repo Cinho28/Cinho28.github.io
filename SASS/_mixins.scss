@@ -17,7 +17,8 @@
 @mixin heart-shape-transition {
     transition:
         stroke 1s,
-        fill 1s opacity 0.4s;
+        fill 1s,
+        opacity 0.4s;
 }
 @mixin heart-fill-transition {
     transition: opacity 0.4s;

@@ -471,7 +471,7 @@ body {
 .restaurant__location {
   font-size: 17px;
   color: #353535;
-  font-weight: 300px;
+  font-weight: 300;
   margin: 0px;
   padding: 0.2rem 0rem 0rem 0rem;
 }
@@ -505,16 +505,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  right: 0.5rem;
+  position: absolute;
+  top: 12.2rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 .restaurant__heart-label .heart-shape {
-  -webkit-transition: stroke 1s, fill 1s opacity 0.4s;
-  transition: stroke 1s, fill 1s opacity 0.4s;
+  -webkit-transition: stroke 1s, fill 1s, opacity 0.4s;
+  transition: stroke 1s, fill 1s, opacity 0.4s;
 }
 .restaurant__heart-label .heart-fill {
   -webkit-transition: opacity 0.4s;
@@ -916,9 +915,6 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: row;
-        -ms-flex-pack: row;
-            justify-content: row;
     padding-left: 3rem;
   }
   .footer__texte-icon {

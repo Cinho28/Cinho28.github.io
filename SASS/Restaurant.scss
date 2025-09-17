@@ -126,7 +126,7 @@ header {
     &__la-note-enchantee {
         object-position: 50% 60%;
     }
-    &__à-la-française {
+    &__a-la-française {
         object-position: 50% 73%;
     }
 }
@@ -150,7 +150,7 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
     }
     &__checkbox {
         display: none;
@@ -159,7 +159,7 @@ header {
         cursor: pointer;
         @include heart-dimensions;
         @include flex-center;
-        padding-top: 2rem;
+        margin-top: 2rem;
         .heart-shape {
             @include heart-shape-transition;
         }
@@ -488,7 +488,7 @@ header {
         }
         &__texte {
             display: flex;
-            justify-content: row;
+
             padding-left: 3rem;
         }
         &__texte-icon {
